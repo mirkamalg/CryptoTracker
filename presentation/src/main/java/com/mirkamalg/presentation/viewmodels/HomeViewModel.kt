@@ -1,6 +1,5 @@
 package com.mirkamalg.presentation.viewmodels
 
-import android.util.Log
 import com.mirkamalg.domain.models.PriceEntity
 import com.mirkamalg.domain.usecase.GetPricesUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -34,9 +33,6 @@ class HomeViewModel @Inject constructor(private val getPricesUseCase: GetPricesU
             }
             onSuccess = {
                 _coins.value = it
-            }
-            onError = {
-                Log.e("HERE", "HERE", it)
             }
             onTerminate = {
                 _loading.value = false

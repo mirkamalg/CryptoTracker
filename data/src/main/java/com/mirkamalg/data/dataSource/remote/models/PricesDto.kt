@@ -15,9 +15,9 @@ data class PricesDto(
 ) {
     val entities: List<PriceEntity>
         get() = listOf(
-            PriceEntity("Bitcoin", bitcoin?.usd),
-            PriceEntity("Ethereum", ethereum?.usd),
-            PriceEntity("Ripple", ripple?.usd),
+            PriceEntity("Bitcoin", "bitcoind", bitcoin?.usd),
+            PriceEntity("Ethereum", "ethereum", ethereum?.usd),
+            PriceEntity("Ripple", "ripple", ripple?.usd),
         )
 }
 

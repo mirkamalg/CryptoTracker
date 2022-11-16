@@ -6,5 +6,6 @@ package com.mirkamalg.domain.models
 
 data class PriceEntity(
     val cryptoName: String,
+    val id: String,
     val price: Double?
 )
