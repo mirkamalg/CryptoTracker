@@ -45,8 +45,6 @@ dependencies {
     implementation "com.google.dagger:hilt-android:$hilt_version"
     kapt "com.google.dagger:hilt-compiler:$hilt_version"
 
-    implementation("io.coil-kt:coil-compose:2.2.2")
-
     //Retrofit, http logger and moshi
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
     implementation 'com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.2'
@@ -54,10 +52,6 @@ dependencies {
     implementation "com.squareup.moshi:moshi:$moshi_version"
     kapt "com.squareup.moshi:moshi-kotlin-codegen:$version_codegen"
 
-    implementation "androidx.room:room-runtime:$room_version"
-    kapt "androidx.room:room-compiler:$room_version"
-    implementation "androidx.room:room-ktx:$room_version"
-    implementation "androidx.room:room-paging:$room_version"
-
-
+    //Timber
+    implementation 'com.jakewharton.timber:timber:5.0.1'
 }

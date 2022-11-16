@@ -3,7 +3,6 @@ buildscript {
     ext {
         hilt_version = "2.44"
         coroutine_version="1.6.0"
-        room_version="2.4.3"
         retrofit_version = "2.9.0"
         moshi_version = "1.13.0"
         version_codegen = "1.13.0"
@@ -12,6 +11,7 @@ buildscript {
 
     dependencies {
         classpath "com.google.dagger:hilt-android-gradle-plugin:$hilt_version"
+        classpath("androidx.navigation:navigation-safe-args-gradle-plugin:2.5.3")
     }
 }
 

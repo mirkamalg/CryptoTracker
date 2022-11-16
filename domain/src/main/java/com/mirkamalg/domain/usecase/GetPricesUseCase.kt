@@ -12,8 +12,12 @@ import kotlin.coroutines.CoroutineContext
 class GetPricesUseCase @Inject constructor(
     context: CoroutineContext,
     private val repository: PricesRepository
-) : BaseUseCase<String, PriceEntity>(context) {
+) : BaseUseCase<GetPricesUseCase.GetPricesParams, List<PriceEntity>>(context) {
 
-    override suspend fun onExecute(input: String) = repository.getPrices(input)
+    data class GetPricesParams(val ids: String, val currency: String)
+
+    override suspend fun onExecute(input: GetPricesParams) = repository.getPrices(
+        input.ids, input.currency
+    )
 
 }

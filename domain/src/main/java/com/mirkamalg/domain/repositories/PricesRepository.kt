@@ -8,6 +8,6 @@ import com.mirkamalg.domain.models.PriceEntity
 
 interface PricesRepository {
 
-    suspend fun getPrices(ids: String): PriceEntity
+    suspend fun getPrices(ids: String, currency: String): List<PriceEntity>
 
 }

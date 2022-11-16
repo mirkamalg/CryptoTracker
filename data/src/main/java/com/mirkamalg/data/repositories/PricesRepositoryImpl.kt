@@ -11,5 +11,6 @@ import javax.inject.Inject
 class PricesRepositoryImpl @Inject constructor(private val apiServices: ApiServices) :
     PricesRepository {
 
-    override suspend fun getPrices(ids: String) = apiServices.getPrice(ids).entity
+    override suspend fun getPrices(ids: String, currency: String) =
+        apiServices.getPrice(ids, currency).entities
 }

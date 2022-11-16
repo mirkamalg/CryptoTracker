@@ -9,8 +9,17 @@ import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
 data class PricesDto(
-    val todo: Any?
+    val bitcoin: Price?,
+    val ethereum: Price?,
+    val ripple: Price?,
 ) {
-    val entity: PriceEntity
-        get() = PriceEntity(todo)
+    val entities: List<PriceEntity>
+        get() = listOf(
+            PriceEntity("Bitcoin", bitcoin?.usd),
+            PriceEntity("Ethereum", ethereum?.usd),
+            PriceEntity("Ripple", ripple?.usd),
+        )
 }
+
+@JsonClass(generateAdapter = true)
+data class Price(val usd: Double? = null)
