@@ -3,6 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.mirkamalg.cryptotracker">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+
     <application
         android:name=".CryptoTrackerApp"
         android:allowBackup="true"
@@ -30,7 +33,5 @@
             android:authorities="com.mirkamalg.cryptotracker.androidx-startup"
             tools:node="remove" />
     </application>
-
-    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>

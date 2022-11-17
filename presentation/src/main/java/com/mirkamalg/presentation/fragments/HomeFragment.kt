@@ -71,7 +71,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
                     root.setOnClickListener {
                         findNavController().navigate(
                             HomeFragmentDirections.actionHomeFragmentToDetailsFragment(
-                                data.cryptoName
+                                data.cryptoName, data.id
                             )
                         )
                     }

@@ -2,7 +2,6 @@ package com.mirkamalg.data.repositories
 
 import com.mirkamalg.data.dataSource.local.CryptoHistory
 import com.mirkamalg.domain.repositories.RecordsRepository
-import timber.log.Timber
 import javax.inject.Inject
 
 /**
@@ -13,7 +12,8 @@ class RecordsRepositoryImpl @Inject constructor(private val cryptoHistory: Crypt
     RecordsRepository {
 
     override fun saveNewRecord(`for`: String, value: Double) {
-        Timber.tag("WorkManager").e("saveNewRecord $`for` == $value")
         cryptoHistory.addRecord(`for`, value)
     }
+
+    override fun readRecords(`for`: String) = cryptoHistory.readRecords(`for`)
 }

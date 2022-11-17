@@ -1,8 +1,10 @@
 package com.mirkamalg.domain.di
 
 import com.mirkamalg.domain.repositories.PricesRepository
+import com.mirkamalg.domain.repositories.RecordsRepository
 import com.mirkamalg.domain.repositories.SettingsRepository
 import com.mirkamalg.domain.usecase.GetPricesUseCase
+import com.mirkamalg.domain.usecase.ReadCryptoRecordUseCase
 import com.mirkamalg.domain.usecase.ReadSettingForCryptoUseCase
 import com.mirkamalg.domain.usecase.SaveCryptoSettingsUseCase
 import dagger.Module
@@ -35,4 +37,8 @@ object UseCaseModule {
     fun provideSaveCryptoSettingsUseCase(repository: SettingsRepository) =
         SaveCryptoSettingsUseCase(Dispatchers.IO, repository)
 
+    @Provides
+    @Singleton
+    fun provideReadCryptoRecordUseCase(repository: RecordsRepository) =
+        ReadCryptoRecordUseCase(Dispatchers.IO, repository)
 }

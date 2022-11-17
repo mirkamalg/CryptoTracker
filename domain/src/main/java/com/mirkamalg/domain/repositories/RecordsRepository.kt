@@ -8,4 +8,6 @@ interface RecordsRepository {
 
     fun saveNewRecord(`for`: String, value: Double)
 
+    fun readRecords(`for`: String): List<Double>
+
 }

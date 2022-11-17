@@ -46,6 +46,9 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.4'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
+    testImplementation 'org.mockito:mockito-core:2.25.0'
+    testImplementation 'org.mockito:mockito-inline:2.13.0'
+    testImplementation 'android.arch.core:core-testing:1.1.1'
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.5.1'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1'
     implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.5.1'
@@ -54,8 +57,6 @@ dependencies {
 
     implementation "com.google.dagger:hilt-android:$hilt_version"
     kapt "com.google.dagger:hilt-compiler:$hilt_version"
-
-    implementation("io.coil-kt:coil-compose:2.2.2")
 
     //Jetpack navigation
     def navigation_version = "2.6.0-alpha04"

@@ -29,4 +29,7 @@ class CryptoHistory @Inject constructor(@ApplicationContext private val context:
         }
     }
 
+    fun readRecords(`for`: String) = preferences.getString(`for`, "")!!.split(",")
+        .mapNotNull { it.toDoubleOrNull() }
+
 }

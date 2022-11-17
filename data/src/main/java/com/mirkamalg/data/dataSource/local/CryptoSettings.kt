@@ -18,12 +18,14 @@ class CryptoSettings @Inject constructor(@ApplicationContext context: Context) {
         context.getSharedPreferences("crypto_settings", Context.MODE_PRIVATE)
     }
 
-    fun readMinMaxPair(`for`: String) = preferences.getString(`for`, null)?.let {
-        it.split("=").run { Pair(get(0).toDoubleOrNull() ?: 0.0, get(1).toDoubleOrNull() ?: 0.0) }
-    } ?: Pair(0.0, 0.0)
+    fun readMinMaxPair(`for`: String) = stringToMinMaxPair(preferences.getString(`for`, null))
 
     fun updateMinMaxPair(`for`: String, min: Double, max: Double) = preferences.edit {
         putString(`for`, "$min=$max")  //Save as serialized mapping
     }
+
+    fun stringToMinMaxPair(string: String?) = string?.let {
+        it.split("=").run { Pair(get(0).toDoubleOrNull() ?: 0.0, get(1).toDoubleOrNull() ?: 0.0) }
+    } ?: Pair(0.0, 0.0)
 
 }

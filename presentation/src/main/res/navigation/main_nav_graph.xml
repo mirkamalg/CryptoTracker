@@ -15,9 +15,12 @@
     <fragment
         android:id="@+id/detailsFragment"
         android:name="com.mirkamalg.presentation.fragments.DetailsFragment"
-        android:label="DetailsFragment" >
+        android:label="{coinName}" >
         <argument
             android:name="coinName"
+            app:argType="string" />
+        <argument
+            android:name="coinId"
             app:argType="string" />
     </fragment>
 </navigation>
